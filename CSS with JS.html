@@ -1,0 +1,81 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>CSS with JS</title>
+	</head>
+<body>
+		<h1><strong>Examples of CSS manipulated with Javascript</strong></h1><br>
+		<hr>
+		//First function
+	<h1 onclick="changeText(this)">Click on this text!</h1>
+		<hr>
+		//Second function: the changes of the function are in the same line of code		
+<h1 onmouseover="style.color='black'" onmouseout="style.color='green' "> Place the mouse here</h1>
+		<hr>
+		//Third function: the same of the function are in the same line of code too
+<h1 id="id1">Change color of the font</h1>
+
+<button type="button" onclick="document.getElementById('id1').style.color = 'blue'"> Click Me!</button>
+		//Fourth function
+		<h1 id="id2"></h1>		
+		<hr>
+		<p>Click the button to display the date.</p>
+<button onclick="displayDate()">The time is?</button>
+		<p id="demo"></p>
+		<hr>
+		//fifth function
+		<p>When the input field gets focus, a function is triggered which changes the background-color.</p> <br>		
+		Enter your name: <input type="text" onfocus="myFunction1(this)">
+		<hr>
+		//sixth function: When you leave the input field, a function is triggered which transforms the input text to upper case
+		<h2>The onchange Event</h2> <br>
+		Enter your name: <input type="text" id="fname" onchange="myFunction()">
+		<hr>
+		//seventh function when you move the mouse over and out the square, changes
+		<h2>The onmouseover and onmouseout Events</h2><br>
+		<div onmouseover="mOver(this)" onmouseout="mOut(this)" style="background-color:#57d8a8;width:150px;height:40px;padding:40px;">Mouse Over Me</div>
+		<hr>
+		<h2>The onmousedown, onmouseup and onclick Events</h2><br>
+		<div onmousedown="mDown(this)" onmouseup="mUp(this)" style="background-color:#D94A38;width:90px;height:20px;padding:40px;">Click Me</div>
+		
+<script>
+	//script of the first function
+function changeText(id) {
+    id.innerHTML = "Everything could change in a second!";
+}
+	//script of the fourth function
+			function displayDate() {
+    document.getElementById("demo").innerHTML = Date();
+}
+	//script of the fifth function
+			function myFunction1(x) {
+    x.style.background = "yellow";
+}
+	//script of the sixth function
+			function myFunction() {
+    var x = document.getElementById("fname");
+    x.value = x.value.toUpperCase();
+}
+	//script of the seventh function
+			function mOver(obj) {
+    obj.innerHTML = "Wowww!"
+}
+	//script ot the eighth function
+function mOut(obj) {
+    obj.innerHTML = "Mouse Over Me"
+}
+			function mDown(obj) {
+    obj.style.backgroundColor = "#98d364";
+    obj.innerHTML = "Release Me";
+}
+
+function mUp(obj) {
+    obj.style.backgroundColor="#6ea6d9";
+    obj.innerHTML="Click here for a few seconds";
+}
+			
+</script>
+
+</body>
+</html>
